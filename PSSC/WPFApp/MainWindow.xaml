@@ -1,0 +1,35 @@
+﻿<Window x:Class="WPFApp.MainWindow"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <local:LoginViewModel />
+    </Window.DataContext>
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="username" Width="200" HorizontalAlignment="Left"/>
+            <TextBlock Text="password" Width="200" HorizontalAlignment="Left"/>
+            <Button Command="{Binding LoginCommand}" Content="Connect"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBox Text="{Binding UserName}" Width="200"   />
+            <TextBox Text="{Binding Password}" Width="200"   />
+            <TextBlock />
+        </StackPanel>
+    </Grid>
+</Window>
